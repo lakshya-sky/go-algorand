@@ -187,6 +187,7 @@ func MakeTimestampedGenesisBalances(balances map[basics.Address]basics.AccountDa
 
 // MakeGenesisBlock creates a genesis block, including setup of RewardsState.
 func MakeGenesisBlock(proto protocol.ConsensusVersion, genesisBal GenesisBalances, genesisID string, genesisHash crypto.Digest) (Block, error) {
+  fmt.Printf("Protocol Version: %v", proto)
 	params, ok := config.Consensus[proto]
 	if !ok {
 		return Block{}, fmt.Errorf("unsupported protocol %s", proto)

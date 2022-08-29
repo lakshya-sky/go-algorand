@@ -18,6 +18,7 @@ package config
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -614,6 +615,7 @@ func (cp ConsensusProtocols) Merge(configurableConsensus ConsensusProtocols) Con
 			}
 		} else {
 			// need to add/update entry
+      fmt.Printf("%v", consensusVersion)
 			staticConsensus[consensusVersion] = consensusParams
 		}
 	}

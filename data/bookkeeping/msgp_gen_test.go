@@ -258,6 +258,7 @@ func TestMarshalUnmarshalGenesisAllocation(t *testing.T) {
 	partitiontest.PartitionTest(t)
 	v := GenesisAllocation{}
 	bts := v.MarshalMsg(nil)
+    t.Errorf("GenesisAllocation bytes: %x\n", bts);
 	left, err := v.UnmarshalMsg(bts)
 	if err != nil {
 		t.Fatal(err)

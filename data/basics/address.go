@@ -70,6 +70,7 @@ func (addr Address) GetUserAddress() string {
 // When converted to an Address object representation, that checksum is dropped (after validation).
 func UnmarshalChecksumAddress(address string) (Address, error) {
 	decoded, err := base32Encoder.DecodeString(address)
+  fmt.Printf("Entry Address: %d", len(decoded))
 
 	if err != nil {
 		return Address{}, fmt.Errorf("failed to decode address %s to base 32", address)

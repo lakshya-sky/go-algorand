@@ -17,6 +17,7 @@
 package data
 
 import (
+	"fmt"
 	"sync/atomic"
 	"time"
 
@@ -86,6 +87,7 @@ func LoadLedger(
 		genesisBal.Balances = make(map[basics.Address]basics.AccountData)
 	}
 	genBlock, err := bookkeeping.MakeGenesisBlock(genesisProto, genesisBal, genesisID, genesisHash)
+  fmt.Printf("Genesis Block Hash: %v", genBlock.MarshalMsg(nil))
 	if err != nil {
 		return nil, err
 	}
